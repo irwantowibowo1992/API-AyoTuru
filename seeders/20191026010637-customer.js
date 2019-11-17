@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -12,26 +12,38 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-   return queryInterface.bulkInsert('customers', [
-     {
-        name: 'Ino',
-        identity_number: 123111234,
-        phone_number: 628978654322,
-        image: 'https://data.whicdn.com/images/282897924/original.jpg'
-      },
-      {
-        name: 'Sakura',
-        identity_number: 253486743,
-        phone_number: 628956454456,
-        image: 'https://honeysanime.com/wp-content/uploads/2015/09/sakura-naruto-wallpaper-2-700x438.jpg'
-      },
-      {
-        name: 'Hinata',
-        identity_number: 123111234,
-        phone_number: 628956654342,
-        image: 'https://medias.spotern.com/spots/w640/65/65581-1532336916.jpg'
-      }
-    ], {});
+    return queryInterface.bulkInsert(
+      "customers",
+      [
+        {
+          name: "Ino",
+          identity_number: 123111234,
+          phone_number: 628978654322,
+          image: "https://data.whicdn.com/images/282897924/original.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Sakura",
+          identity_number: 253486743,
+          phone_number: 628956454456,
+          image:
+            "https://honeysanime.com/wp-content/uploads/2015/09/sakura-naruto-wallpaper-2-700x438.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Hinata",
+          identity_number: 123111234,
+          phone_number: 628956654342,
+          image:
+            "https://medias.spotern.com/spots/w640/65/65581-1532336916.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -42,6 +54,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-   return queryInterface.bulkDelete('customers', null, {});
+    return queryInterface.bulkDelete("customers", null, {});
   }
 };

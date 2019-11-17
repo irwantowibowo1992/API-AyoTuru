@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -12,20 +12,32 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-   return queryInterface.bulkInsert('rooms', [
-    {
-      name: 'Kluthuk Spesial'
-    },
-    {
-      name: 'Kluthuk Suite'
-    },
-    {
-      name: 'Kluthuk Super Suite'
-    },
-    {
-      name: 'Klutuk Very Super Suite'
-    }
-], {});
+    return queryInterface.bulkInsert(
+      "rooms",
+      [
+        {
+          name: "Kluthuk Spesial",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Kluthuk Suite",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Kluthuk Super Suite",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          name: "Klutuk Very Super Suite",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -36,6 +48,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-   return queryInterface.bulkDelete('rooms', null, {});
+    return queryInterface.bulkDelete("rooms", null, {});
   }
 };

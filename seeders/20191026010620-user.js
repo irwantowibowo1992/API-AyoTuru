@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -13,14 +13,20 @@ module.exports = {
       }], {});
     */
 
-   return queryInterface.bulkInsert('users', [
-    {
-      email: "irwanto@gmail.com",
-      password: "irwanto",
-      name: "Irwanto Wibowo",
-      image: "https://i.ebayimg.com/images/g/yqUAAOSw-R5ctbHK/s-l400.jpg"
-    }
-    ], {});
+    return queryInterface.bulkInsert(
+      "users",
+      [
+        {
+          email: "irwanto@gmail.com",
+          password: "irwanto",
+          name: "Irwanto Wibowo",
+          image: "https://i.ebayimg.com/images/g/yqUAAOSw-R5ctbHK/s-l400.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -31,6 +37,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-   return queryInterface.bulkDelete('users', null, {});
+    return queryInterface.bulkDelete("users", null, {});
   }
 };
